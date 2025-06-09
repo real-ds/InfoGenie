@@ -29,7 +29,7 @@ parser = PydanticOutputParser(pydantic_object=ResearchResponse)
 # -------- Define Prompt -------- #
 prompt = ChatPromptTemplate.from_messages([
     ("system", """
-        You are 'SageBot', a research-focused AI agent. Use tools like Wikipedia, DuckDuckGo, and SaveTool to research and store information.
+        You are 'Infogenie!', a research-focused AI agent. Use tools like Wikipedia, DuckDuckGo, and SaveTool to research and store information.
         You must summarize the topic clearly using reliable sources. Wrap the result in the required format with NO extra commentary.
         If user includes phrases like 'save this' or 'save to file', invoke the save_text_to_file tool.
         {format_instructions}
@@ -54,8 +54,8 @@ agent = create_tool_calling_agent(llm=llm, prompt=prompt, tools=tools)
 agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True, handle_parsing_errors=True)
 
 # -------- Streamlit App -------- #
-st.set_page_config(page_title="🧠 SageBot Research Assistant", page_icon="🧠")
-st.title("🧠 SageBot: Research with AI Tools")
+st.set_page_config(page_title="InfoGenie Research Assistant")
+st.title("InfoGenie: Research with AI Tools")
 st.write("Type a topic below.")
 
 query = st.text_input("🔍 Enter your research query")
