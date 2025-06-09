@@ -55,7 +55,7 @@ agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True, handle_pa
 
 # -------- Streamlit App -------- #
 st.set_page_config(page_title="InfoGenie Research Assistant")
-st.title("InfoGenie: Research with AI Tools")
+st.title("InfoGenie: Enhance Your Research with AI")
 st.write("Type a topic below.")
 
 query = st.text_input("🔍 Enter your research query")
